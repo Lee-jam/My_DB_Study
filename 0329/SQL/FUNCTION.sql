@@ -1,0 +1,24 @@
+/* FUNCTION 함수
+TO_CHAR, TO_DATE, SYSDATE => 내장함수
+우리가 하려는 것은 사용자 정의 함수(User Defined Function)
+특정한 기능을 모듈화하여 재사용이 용이하고 쿼리문을 간결하게 해줌.
+CREATE OR REPLACE FUNCTIION 함수명 [ (ARGUMENT. . .) ]
+RETURN 데이터 타입(반환값)
+IS[AS] 선언부
+BEGIN 실행부
+[EXCEPTION]
+RETURN 변수/값; 필수
+END;
+*/
+CREATE OR REPLACE FUNCTION FN_GET_DEPT_NAME(P_DEPTNO IN NUMBER)
+RETURN VARCHAR2
+IS
+    V_DEPTNAME DEPT.DNAME%TYPE;
+BEGIN
+    SELECT DNAME INTO V_DEPTNAME
+    FROM DEPT
+    WHERE DEPTNO=P_DEPTNO;
+    RETURN V_DEPTNAME;
+END;
+
+-- DEPT 테이블에 있는 DNAME 중 DEPTNO와 P_DEPTNO가 같은 조건에 맞는 값을 가져오고 그 값을 V_DEPTNAME에 넣는다.

@@ -14,7 +14,17 @@
 ✔ 대신 데이터를 연결되지 않은 개별파일로 저장되며, 문서 또는 리치 미디어 파일과 같은 복잡하고 구조화되지 않은 데이터 유형에 사용할 수 있다.  
 ✔ 관계형 데이터베이스와 달리 유연한 데이터 모델을 따르므로 자주 변경되는 데이터를 저장하거나 다양한 유형의 데이터를 처리하는 애플리케이션에 적합하다고 한다.
 
+<br>
 
+No-SQL DB 대표적인 세가지
+```
+Key-value : key와 value로 이루어진 가장 단순한 구조로 단순한 만큼 속도가 굉장히 빠른 장점이 있으며 캐싱,세션관리 리더보드, 실시간 분석 등에 사용됨. 
+            대표적으로 redis, Amazon DynamoDB가 있음.
+Document :  key와 value가 아닌 key와 json 형태의 document로 이루어져있고 json과 형태가 동일하여 스키마 변동에 유연하게 대응이 가능함.
+            대표적으로 mongoDB, Amazon DocumentDB, Firestore가 있음.
+Graph : node에 속성별로 데이터를 저장하는 방식으로 소셜 네트워크나 추천엔진을 위한 데이터베이스에 주로 사용됨.
+        대표적으로 neo4j, Amazon Neptune, Giraph가 있음.
+```
 <br>
 
 
@@ -71,14 +81,54 @@
 |도메인(domain)||
 
 
-
-
-
 | COl1 | COl2 | COl3 | COl4 | COl5 | COl6 | COl7 | COl8 |
 |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |
 |value1|value2|value3|value4|value5|value6|value7|value8|
 |value1|value2|value3|value4|value5|value6|value7|value8|
 |value1|value2|value3|value4|value5|value6|value7|value8|
 |value1|value2|value3|value4|value5|value6|value7|value8|
+---
 
 <br>
+
+#### ❓ 파일 시스템과 개념,논리적 모델링, 물리적 모델링
+- 파일시스템은 DB가 개발되기 전에 데이터를 관리하고 있는 시스템을 뜻한다고 함.
+
+- 개념적 모델링은 사용자 요구사항을 분석하여 분석한 내용의 오류를 방지하고 실데이터를 개념적으로 일반화시켜 데이터 구조, 타입, 속성, 관계 등 DB 구축에 필요한 사항들을 도출하는 과정
+
+- 논리적 모델링은 개념적 모델링에서 도출된 내용을 토대로 데이터 정의 언어로 된 개념 스키마를 생성하는 과정  
+
+        스키마란? 구조나 조건에 관련한 전반적인 내용들을 담고있는 메타데이터의 집합 또는 자료구조
+
+- 물리적 모델링은 논리적 모델링을 통해 생성된 개념 스키마를 실제로 저장할 수 있는 테이블을 데이터베이스에 구현하는 과정
+
+<br>
+
+## SQL (Structured Query Language)
+---
+> 관계형 데이터베이스와 상호작용하는 언어로 데이터베이스에 정보를 저장하고 처리하기 위해 사용됨.
+
+- DDL data definition Language
+    + CREATE
+    + ALTER
+    + RENAME
+    + DROP
+    + TRUNCATE
+    + COMMENT
+- DML data manipulation Language
+    + SELECT
+    + INSERT
+    + UPDATE
+    + DELETE
+    + MERGE
+    + CALL
+    + EXPLAIN PLAN
+    + LOCK TABLE
+- DCL data control Language
+    + GRANT
+    + REVOKE
+- TCL Transaction control Language
+    + COMMIT
+    + ROLLBACK
+    + SAVEPOINT
+    + TRANSACTRION

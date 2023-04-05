@@ -1,7 +1,7 @@
 # My_DB_Study 
 🔥 데이터베이스를 전반적인 내용에 대해 공부하고 이해하고자 한다.
 
-## 데이터베이스란?  💾 :smile
+## 데이터베이스란?  💾
 ---
 구조화된 정보 또는 데이터의 조직화된 모음으로 일반적으로 컴퓨터 시스템에 전자적으로 저장하고 필요에 의해 데이터를 조회하거나 생성, 변경 삭제하여 원하는 데이터를 원하는 타이밍에 사용할 수 있는 데이터들의 집합체이다.
 
@@ -71,7 +71,6 @@ Graph : node에 속성별로 데이터를 저장하는 방식으로 소셜 네�
 
 <img src="http://wiki.hash.kr/images/a/a3/%EB%A6%B4%EB%A0%88%EC%9D%B4%EC%85%98_%EA%B5%AC%EC%A1%B0.png">
 
-이미지가 안보일 시 참조
 |개념/논리|물리|
 |--|--|
 |엔티티(Entity)|테이블(Table)|
@@ -81,12 +80,6 @@ Graph : node에 속성별로 데이터를 저장하는 방식으로 소셜 네�
 |도메인(domain)||
 
 
-| COl1 | COl2 | COl3 | COl4 | COl5 | COl6 | COl7 | COl8 |
-|  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |
-|value1|value2|value3|value4|value5|value6|value7|value8|
-|value1|value2|value3|value4|value5|value6|value7|value8|
-|value1|value2|value3|value4|value5|value6|value7|value8|
-|value1|value2|value3|value4|value5|value6|value7|value8|
 ---
 
 <br>
@@ -108,14 +101,15 @@ Graph : node에 속성별로 데이터를 저장하는 방식으로 소셜 네�
 ---
 > 관계형 데이터베이스와 상호작용하는 언어로 데이터베이스에 정보를 저장하고 처리하기 위해 사용됨.
 
-- DDL data definition Language
+- DDL : data definition Language : 데이터베이스의 전반적인 구조를 정의하는 언어<br>
+  전반적인 구조 : table, view, index, procedure
     + CREATE
     + ALTER
     + RENAME
     + DROP
     + TRUNCATE
     + COMMENT
-- DML data manipulation Language
+- DML : data manipulation Language : DDL에 의해 생성된 스키마 내에서 데이터를 조작하는 언어
     + SELECT
     + INSERT
     + UPDATE
@@ -124,11 +118,15 @@ Graph : node에 속성별로 데이터를 저장하는 방식으로 소셜 네�
     + CALL
     + EXPLAIN PLAN
     + LOCK TABLE
-- DCL data control Language
+- DCL : data control Language : 데이터에 대한 엑세스 권한을 제어하는 언어
     + GRANT
     + REVOKE
-- TCL Transaction control Language
+- TCL : Transaction control Language : 트랜젝션을 제어하는 언어
     + COMMIT
     + ROLLBACK
     + SAVEPOINT
     + TRANSACTRION
+
+> 트랜젝션이란 데이터베이스의 상태를 변화하는 수행 작업의 최소단위
+
+### 서브쿼리

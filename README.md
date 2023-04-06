@@ -18,11 +18,14 @@
 
 No-SQL DB 대표적인 세가지
 ```
-Key-value : key와 value로 이루어진 가장 단순한 구조로 단순한 만큼 속도가 굉장히 빠른 장점이 있으며 캐싱,세션관리 리더보드, 실시간 분석 등에 사용됨. 
+Key-value : key와 value로 이루어진 가장 단순한 구조로 단순한 만큼 속도가 
+            굉장히 빠른 장점이 있으며 캐싱,세션관리 리더보드, 실시간 분석 등에 사용됨. 
             대표적으로 redis, Amazon DynamoDB가 있음.
-Document :  key와 value가 아닌 key와 json 형태의 document로 이루어져있고 json과 형태가 동일하여 스키마 변동에 유연하게 대응이 가능함.
+Document :  key와 value가 아닌 key와 json 형태의 document로 이루어져있고
+            json과 형태가 동일하여 스키마 변동에 유연하게 대응이 가능함.
             대표적으로 mongoDB, Amazon DocumentDB, Firestore가 있음.
-Graph : node에 속성별로 데이터를 저장하는 방식으로 소셜 네트워크나 추천엔진을 위한 데이터베이스에 주로 사용됨.
+Graph : node에 속성별로 데이터를 저장하는 방식으로 소셜 네트워크나 추천엔진을 위한
+        데이터베이스에 주로 사용됨.
         대표적으로 neo4j, Amazon Neptune, Giraph가 있음.
 ```
 <br>
@@ -71,13 +74,13 @@ Graph : node에 속성별로 데이터를 저장하는 방식으로 소셜 네�
 
 <img src="http://wiki.hash.kr/images/a/a3/%EB%A6%B4%EB%A0%88%EC%9D%B4%EC%85%98_%EA%B5%AC%EC%A1%B0.png">
 
-|개념/논리|물리|
-|--|--|
-|엔티티(Entity)|테이블(Table)|
-|어트리뷰트(Attribute)|컬럼(Column)|
-|튜플(Tuple)|로우(Row)|
-|유일값(Identifier)|기본키(Primary Key),Unique|
-|도메인(domain)||
+|파일 시스템|개념/논리|물리|
+|--|--|--|
+|파일|엔티티(Entity)|테이블(Table)|
+|필드|어트리뷰트(Attribute)|컬럼(Column)|
+|레코드|튜플(Tuple)|로우(Row)|
+|키|유일값(Identifier)|기본키(Primary Key),Unique|
+||도메인(domain)||
 
 
 ---

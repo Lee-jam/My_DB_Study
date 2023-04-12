@@ -136,22 +136,33 @@ Graph : node에 속성별로 데이터를 저장하는 방식으로 소셜 네�
 Join은 DB 구조 내의 여러 테이블들의 연결하여 하나의 테이블로 표현하는 것을 의미함.<br>
 이말은 Join을 하기 위해서는 둘 이상의 테이블을 연결해야 함.
 Join을 통해 나온 테이블을 테이블로서 저장하거나 그 자체로 이용할 수 도 있음.
+식별자와 참조자
 
 ### Join의 필요성
 > 관계형 데이터베이스는 의미있는 데이터 집합으로 테이블을 구성하고 정규화를 통해 서로 관계있는 데이터 집합을 여러 테이블로 나뉘어 저장하므로 저장공간의 효율성과 확장성이 향상됨. <br>
 각 테이블에 저장된 데이터를 효과적으로 검색을 하기 위해서는 Join이 필요하다.
 
+
 #### Join의 종류
 Inner Join : 교집합  
 여러 어플리케이션에서 사용되는 가장 흔한 결합 방식으로 공통적인 부분만 Select가 됨.
+>참조키를 기준으로 일치하는 행만 조인하며 관계가 있는 레코드만 합치는 것을 INNER JOIN이라고 함.
+관계가 없는 레코드들을 제거하고 자식테이블이 필요로하는 만크 부모테이블의 컬럼 수를 복사해서 붙임.
 ```SQL
---명시적 조인표현(explicit)
+--명시적 inner 조인표현(explicit)
 SELECT * FROM A INNER JOIN B ON "조건문";
+
+--아우터 조인표현
+SELECT * FROM A LEFT/RIGHT/FULL OUTER JOIN B ON "조건문";
+SELECT * FROM A LEFT/RIGHT/FULL JOIN B ON "조건문";
 
 --암시적 조인표현(implicit)
 SELECT * FROM A,B WHERE "조건문";
 ```
-Outer Join
-Left Join
-Right Join
-full Join
+Outer Join   
+관계가 없는 레코드라도 기준에 맞는 방향의 레코드는 출력되는 대신 조건이 안맞으면 나머지 필드는 NULL값으로 처리
+- Left Join 왼쪽에 있는 아우터를 포함  
+- Right Join 오른쪽에 있는 아우터를 포함  
+- full Join 왼쪽 오른쪽에 있는 아우터를 전부 포함  
+>왼쪽 오른쪽 기준은 쿼리문 작성 시 A OUTER JOIN B 에서 OUTER JOIN을 기준으로 나눔.
+
